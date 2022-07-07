@@ -3,43 +3,62 @@
 @tailwind utilities;
 
 @layer components {
-    /*button.rainbow-button {*/
 
-    /*    @apply border-none outline-0 relative z-10 rounded-md before:absolute before:animate-[move_2s_linear_infinite]*/
-    /*    before:opacity-0 before:transition-opacity before:duration-300 before:ease-linear before:blur-md before:rounded-md*/
-    /*    before:-z-0 before:-left-1 before:-top-1 hover:before:opacity-100 after:-z-10 after:absolute after:w-full after:h-full after:left-0*/
-    /*    after:top-0 after:rounded-md after:bg-[#555273]*/
+    h1, h2, h3, h4, h5 {
+        @apply dark:text-white text-black font-bold
+    }
 
-    /*}*/
+    h1 {
+        @apply text-3xl
+    }
 
-    /*button.rainbow-button:before {*/
-    /*    width: calc(100% + 4px);*/
-    /*    height: calc(100% + 4px);*/
-    /*    background: linear-gradient(*/
-    /*            124deg,*/
-    /*            #ff2400,*/
-    /*            #e81d1d,*/
-    /*            #e8b71d,*/
-    /*            #e3e81d,*/
-    /*            #1de840,*/
-    /*            #1ddde8,*/
-    /*            #2b1de8,*/
-    /*            #dd00f3,*/
-    /*            #dd00f3*/
-    /*    );*/
-    /*    background-size: 400%;*/
-    /*}*/
+    h2 {
+        @apply text-2xl
+    }
 
+    h3 {
+        @apply text-xl
+    }
+
+    h4 {
+        @apply  text-lg
+    }
+
+    .container {
+        @apply h-full
+    }
+
+    .button {
+        @apply px-8 py-4 bg-primary rounded-md cursor-pointer text-lg text-white
+    }
+
+    .outlined-button {
+        @apply border-2 dark:border-secondary-light border-secondary-light
+    }
+
+    .navigate-button {
+        @apply flex place-content-center border-2 border-secondary-light dark:border-secondary-dark
+        rounded-md p-2
+    }
+
+    .navigate-button:not(:disabled) {
+        @apply hover:shadow-md shadow-dark dark:shadow-light transition-all duration-150 ease-in-out
+    }
+}
+
+.active-gradient {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(5,0,41,1) 14%, rgba(0,231,228,1) 91%);
+}
+
+button, button:before, button:after {
+    @apply cursor-pointer
 }
 
 .rainbow-button {
-    border: none;
-    outline: none;
-    position: relative;
-    z-index: 0;
+    @apply border-none outline-0 relative z-0
 }
 
-.rainbow-button::before {
+.rainbow-button:before {
     position: absolute;
     content: "";
     width: calc(100% + 4px);
@@ -67,11 +86,11 @@
     border-radius: inherit;
 }
 
-.rainbow-button:hover::before {
+.rainbow-button:hover:before, .rainbow-button.active:before {
     opacity: 1;
 }
 
-.rainbow-button::after {
+.rainbow-button:after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -80,6 +99,18 @@
     height: 100%;
     left: 0;
     top: 0;
+    border-radius: inherit;
+}
+
+.menu-link {
+    transition: background-image 1.5s ease-in-out;
+    outline: hidden;
+}
+
+.menu-link:hover {
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    animation: slideBg 5s linear infinite;
+    transition: background-image 1.5s ease-in-out;
     border-radius: inherit;
 }
 
@@ -104,5 +135,11 @@
     }
     100% {
         background-position: 0 0;
+    }
+}
+
+@keyframes slideBg {
+    to {
+        background-position:20vw;
     }
 }

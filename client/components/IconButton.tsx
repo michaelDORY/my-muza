@@ -1,21 +1,25 @@
-import React, { FC, MouseEventHandler, ReactElement } from "react";
+import React, { FC, MouseEvent, ReactElement } from "react";
 
 interface Props {
   icon: ReactElement;
-  width: string;
-  color: string;
-  height: string;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  active?: boolean;
+  width?: string;
+  color?: string;
+  height?: string;
+  styles?: string;
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const IconButton: FC<Props> = (props) => {
-  const { icon, width, height, color, onClick } = props;
+  const { icon, width, height, color, onClick, active, styles } = props;
   return (
     <button
       type="button"
       className={`rainbow-button flex justify-center items-center rounded-3xl shadow-sm 
       shadow-primary hover:backdrop-saturate-200 transition-all ease-linear
-       duration-150 ${width} ${height} ${color}`}
+       duration-150 ${width} ${height} ${color} ${styles} ${
+        active && "active"
+      }`}
       onClick={onClick}
     >
       {icon}
