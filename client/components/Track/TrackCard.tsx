@@ -15,7 +15,7 @@ const TrackCard = () => {
     <Link href="tracks/62b772100aca63ec6cee0994">
       <a>
         <div
-          className="flex px-10 py-6 dark:bg-secondary-dark bg-secondary-light
+          className="flex px-8 py-4 dark:bg-secondary-dark bg-secondary-light
     w-full justify-between items-center dark:shadow-light shadow-dark shadow-xl
     rounded-md"
         >

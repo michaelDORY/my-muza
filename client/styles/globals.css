@@ -9,19 +9,35 @@
     }
 
     h1 {
-        @apply text-3xl
-    }
-
-    h2 {
         @apply text-2xl
     }
 
-    h3 {
+    h2 {
         @apply text-xl
     }
 
-    h4 {
-        @apply  text-lg
+    h3 {
+        @apply text-lg
+    }
+
+    label {
+        @apply text-accent-dark
+    }
+
+    input {
+        @apply w-full h-12 dark:border-accent-dark border-accent-light border-2 rounded-md
+        bg-transparent outline-0 focus:shadow-light dark:focus:shadow-dark shadow-md transition-all duration-150
+        ease-in-out px-1 text-secondary-light
+    }
+
+    textarea {
+        @apply w-full h-20 dark:border-accent-dark border-accent-light border-2 rounded-md
+        bg-transparent resize-none outline-0 focus:shadow-light dark:focus:shadow-dark shadow-md transition-all
+        duration-150 ease-in-out px-1 text-secondary-light
+    }
+
+    form {
+        @apply dark:bg-formColor-light bg-formColor-dark rounded-md px-8 py-4
     }
 
     .container {

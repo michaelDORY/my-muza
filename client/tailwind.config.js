@@ -16,10 +16,18 @@ module.exports = {
           dark: "#A0C3D2",
           light: "#A0C3D2",
         },
+        accent: {
+          dark: '#040015',
+          light: '#ccccd9'
+        },
+        formColor: {
+          dark: 'rgba(4,0,21,0.35)',
+          light: 'rgba(204,204,217,0.35)'
+        }
       },
       backgroundColor: {
         dark: "#040015",
-        light: "#D2EAF1",
+        light: "#A0C3D2",
       },
       boxShadowColor: {
         dark: "#120b33",
@@ -30,16 +38,6 @@ module.exports = {
           "0%, 100%": { backgroundPosition: "0 0" },
           "50%": { backgroundPosition: "400% 0" },
         },
-      },
-      fontSize: {
-        xs: ".75rem",
-        sm: ".875rem",
-        tiny: ".875rem",
-        base: "1rem",
-        lg: "1.5rem",
-        xl: "2rem",
-        "2xl": "3rem",
-        "3xl": "4rem",
       },
     },
   },

@@ -14,7 +14,7 @@ const TrackPlayer = () => {
   return (
     <div className="fixed bottom-0 w-3xl left-1/2 -translate-x-1/2">
       <div
-        className="active-gradient flex gap-x-10 h-24 px-10 py-6
+        className="active-gradient flex gap-x-10 h-20 px-10 py-4
     w-full justify-between items-center dark:shadow-light shadow-dark shadow-xl
     rounded-md"
       >

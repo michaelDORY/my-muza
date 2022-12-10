@@ -12,7 +12,7 @@ const StepsNavigation: FC<Props> = (props) => {
   const { stepsQuantity, activeStep, setActiveStep, children } = props;
   return (
     <div className="flex flex-col h-full justify-between">
-      <div className="flex justify-between items-center w-full">
+      <div className="flex justify-evenly items-center w-full">
         {Array(stepsQuantity)
           .fill(null)
           .map((_, index) => (
@@ -29,27 +29,42 @@ const StepsNavigation: FC<Props> = (props) => {
           ))}
       </div>
       {children}
-      <div className="flex justify-between items-center w-full">
-        <button
-          className="navigate-button outlined-button"
-          disabled={activeStep === 1}
-          onClick={
-            activeStep !== 1 ? () => setActiveStep((prev) => --prev) : undefined
-          }
-        >
-          <IoIosArrowBack className="dark:fill-white fill-black" size={50} />
-        </button>
-        <button
-          className="navigate-button outlined-button"
-          disabled={activeStep === stepsQuantity}
-          onClick={
-            activeStep !== stepsQuantity
-              ? () => setActiveStep((prev) => ++prev)
-              : undefined
-          }
-        >
-          <IoIosArrowForward className="dark:fill-white fill-black" size={50} />
-        </button>
+      <div className="relative w-full">
+        {activeStep !== 1 && (
+          <button
+            className="absolute left-0 navigate-button outlined-button"
+            onClick={
+              activeStep !== 1
+                ? () => setActiveStep((prev) => --prev)
+                : undefined
+            }
+          >
+            <IoIosArrowBack className="dark:fill-white fill-black" size={50} />
+          </button>
+        )}
+        {activeStep !== stepsQuantity && (
+          <button
+            className="absolute right-0 navigate-button outlined-button"
+            onClick={
+              activeStep !== stepsQuantity
+                ? () => setActiveStep((prev) => ++prev)
+                : undefined
+            }
+          >
+            <IoIosArrowForward
+              className="dark:fill-white fill-black"
+              size={50}
+            />
+          </button>
+        )}
+        {activeStep === stepsQuantity && (
+          <button
+            className="button rainbow-button mx-auto block mt-4"
+            type="submit"
+          >
+            Add
+          </button>
+        )}
       </div>
     </div>
   );

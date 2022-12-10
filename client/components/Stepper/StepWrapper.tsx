@@ -13,7 +13,7 @@ const StepWrapper: FC<Props> = (props) => {
       <StepsNavigation
         activeStep={currentStep}
         setActiveStep={setCurrentStep}
-        stepsQuantity={3}
+        stepsQuantity={Children.toArray(children).length}
       >
         {Children.toArray(children)[currentStep - 1]}
       </StepsNavigation>
